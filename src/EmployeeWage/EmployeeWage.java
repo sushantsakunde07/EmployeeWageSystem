@@ -41,6 +41,7 @@ public class EmployeeWage {
         }
         totalEmployeeWage = totalEmployeeHours * empRatePerHour;
     }
+
     @Override
     public String toString() {
         return "\n Total Employee Wage for " + company + " is: " + totalEmployeeWage ;
