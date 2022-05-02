@@ -1,36 +1,40 @@
 package EmployeeWage;
 
 public class EmployeeWage {
-    public static final int FULL_TIME = 1;
-    public static final int PART_TIME = 2;
-    public static final int EMP_RATE_PER_HOUR = 20;
-    public static final int NUMBER_OF_WORKING_DAYS = 20;
-    public static final int MAXIMUM_HOURS_IN_MONTH = 100;
 
-    public static void main(String[] args) {
-        int employeeHour = 0;
-        int totalEmployeeHours = 0;
-        int totalWorkingDays = 0;
-        while (totalEmployeeHours <= MAXIMUM_HOURS_IN_MONTH && totalWorkingDays < NUMBER_OF_WORKING_DAYS) {
-            totalWorkingDays++;
+    public static final int isFullTime = 1;
+    public static final int isPartTime = 2;
+    public static final int empRatePerHour = 20;
+    public static final int numberOfWorkingDays = 20;
+
+    public static final int maximumHoursInMonth = 100;
+
+    public static int employeeDailyWage() {
+        int employeehour = 0;
+        int Totalemployeehours = 0, totalworkingdays = 0;
+        while (Totalemployeehours <= maximumHoursInMonth && totalworkingdays < numberOfWorkingDays) {
+            totalworkingdays++;
             double empcheck = Math.floor(Math.random() * 10) % 3;
             switch ((int) empcheck) {
-                case FULL_TIME:
-                    employeeHour = 8;
+                case isFullTime:
+                    employeehour = 8;
                     break;
-                case PART_TIME:
-                    employeeHour = 4;
+                case isPartTime:
+                    employeehour = 4;
                     break;
                 default:
-                    employeeHour = 0;
+                    employeehour = 0;
             }
-            totalEmployeeHours += employeeHour;
-            System.out.println("day :" + totalWorkingDays + " employee hour:" + employeeHour);
+            Totalemployeehours += employeehour;
+            System.out.println("days : " + totalworkingdays + "employee hour:" + employeehour);
         }
-        int Totalemployeewage = totalEmployeeHours * EMP_RATE_PER_HOUR;
+        int Totalemployeewage = Totalemployeehours * empRatePerHour;
+        System.out.println("Total empolyee HOUR:" + Totalemployeehours);
         System.out.println("Total empolyee wage:" + Totalemployeewage);
-        System.out.println("Total empolyee hour:" + totalEmployeeHours);
-        System.out.println("Total empolyee working days:" + totalWorkingDays);
+        return isFullTime;
+    }
 
+    public static void main(String[] args) {
+        employeeDailyWage();
     }
 }
